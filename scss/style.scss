@@ -1,0 +1,213 @@
+@import 'base';
+
+/* Body and typography */
+body {
+    font-family: $font-family-fraunces, $font-family-fallback;
+}
+
+p, a, h5{
+    font-family: $font-family-barlow, $font-family-fallback;
+}
+
+/* Header */
+header {
+  nav {
+    @include flex($justify: space-between);
+  }
+}
+
+/** Naviation in hero of header**/
+nav {
+    padding: 0 3vw;
+    ul {
+        @include flex($align: center);
+        gap: 35px;
+    }
+
+    a {
+        font-weight: $font-weight-barlow;
+    }
+
+    #contact {
+    }
+}
+
+/**Hero layout using grid**/
+.hero {
+    @include grid($column: 1fr 1fr, $row: reapeat(4, 1fr));
+    grid-template-areas: 
+        "fullimg fullimg"
+        "learnmore-one learnmore-one-pic"
+        "learnmore-two-pic learnmore-two"
+        "learnmore-one-pic-wcap learnmore-two-pic-wcap"
+    ;
+    
+    .hero-img { grid-area: fullimg; }
+    .hero-learnmore.one { grid-area: learnmore-one; }
+    .hero-learnmore.one.pic { grid-area: learnmore-one-pic; }
+    .hero-learnmore.two { grid-area: learnmore-two; }
+    .hero-learnmore.two.pic { grid-area: learnmore-two-pic; }
+    //The bottom with caption inside them
+    .hero-learnmore-one.pic { grid-area: learnmore-one-pic-wcap; }
+    .hero-learnmore-two.pic { grid-area: learnmore-two-pic-wcap; }
+}
+
+
+/*** Hero children ***/
+.hero-img {
+     position: relative;
+     min-height: 100vh;
+
+     .logo {
+         width: 10em;
+     }
+
+     .caption {
+         position: absolute;
+         top: 35%;
+         left: 50%;
+         transform: translate(-50%, -35%);
+
+         @include flex($direction: column, $align: center);
+         gap: 70px;
+
+         h1 {
+             text-align: center;
+             color: $color-neu-white;
+             font-size: 3.5em;
+             font-weight: $font-weight-fraunces-2;
+             word-spacing: 10px;
+         }
+         
+         div {
+             cursor: pointer;
+             transition: 0.3s;
+             transform: translateY(0);
+         }
+
+         div:hover{
+             transition: 0.3s;
+             transform: translateY(-10%);
+         }
+     }
+
+     nav {
+         position: absolute;
+         top: 5%;
+         left: 0;
+         right: 0;
+
+         a {
+             font-family: $font-family-barlow, $font-family-fallback;
+             font-size: $font-size;
+             color: $color-neu-white;
+         }
+
+         #contact {
+             padding: 15px 30px;
+             border-radius: 30px;
+             color: $color-pri-dark-cyan;
+             background-color: $color-neu-white;
+             font-family: $font-family-fraunces, $font-family-fallback;
+             font-weight: $font-weight-fraunces-2;
+         }
+     }
+}
+
+.hero-learnmore {
+    @include flex($justify: center, $align: center);
+
+    .hero-learnmore-wraper{
+        @include flex($direction: column);
+        gap: 40px;
+        width: 60%;
+    }
+
+    h3 {
+        font-size: 2.75em;
+    }
+
+    p {
+        font-size: $font-size;
+        color: $color-neu-very-dark-blue;
+        line-height: 1.75;
+    }
+
+    button {
+        align-self: flex-start;
+    }
+}
+
+.hero-learnmore-one.pic, .hero-learnmore-two.pic{
+    position: relative;
+    
+    //position of the caption
+    .caption {  
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%,-80%);
+    }
+
+    .caption {
+        @include flex($direction: column, $align: center);
+        gap: 30px;
+        h3 {
+            color: $color-pri-dark-cyan;
+            font-weight: $font-weight-fraunces-2;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        p { 
+            text-align: center;
+        }
+    }
+}
+
+/* Main area */
+main {
+    @include flex($direction: column, $align: center);
+}
+
+.client-wraper {
+    width: 80%;
+    @include flex();
+    gap: 50px;
+    * {
+        flex: 1;
+    }
+}
+
+.client {
+    @include flex($direction: column, $align: center);
+    gap: 30px;
+    
+    p {
+        text-align: center;
+    }
+
+    img {
+        width: 25%;
+        height: auto;
+        border-radius: 200px;
+    }
+}
+
+/* Footer section */
+
+/** gallery **/
+.gallery {
+    @include flex();
+
+    * {
+        flex: 1;
+    }
+}
+
+footer {
+    nav {
+        background-color: $color-pri-dark-moderate-cyan;
+        @include flex($direction: column, $align: center);
+    }
+}

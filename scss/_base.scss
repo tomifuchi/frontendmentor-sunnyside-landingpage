@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+//Style guide
+// Colors
+
+// Primary
+
+$color-pri-soft-red: hsl(7, 99%, 70%);
+$color-pri-yellow: hsl(51, 100%, 49%);
+$color-pri-dark-cyan: hsl(167, 40%, 24%);
+$color-pri-dark-blue: hsl(198, 62%, 26%);
+$color-pri-dark-moderate-cyan: hsl(168, 34%, 41%);
+
+//# Neutral
+
+$color-neu-very-dark-blue: hsl(212, 27%, 19%);
+$color-neu-very-dark-grayish-blue: hsl(213, 9%, 39%);
+$color-neu-dark-grayish-blue:  hsl(232, 10%, 55%);
+$color-neu-grayish-blue: hsl(210, 4%, 67%);
+$color-neu-white: hsl(0, 0%, 100%);
+
+// Typography
+
+//# Body Copy
+
+$font-size: 18px;
+
+//Font
+$font-family-fallback: Verdana, Geneva, Tahoma, sans-serif;
+
+$font-family-barlow: 'Barlow';
+$font-weight-barlow: 600;
+$font-family-fraunces: 'Fraunces';
+$font-weight-fraunces-1: 700;
+$font-weight-fraunces-2: 900;
+
+%reset-margin-padding {
+    margin: 0;
+    padding: 0;
+}
+
+%content-wraper {
+    max-width: 1440px;
+    height: auto;
+    margin: 0 auto;
+}
+
+//General mixins
+@mixin flex($display: flex, $direction: row, $wrap: nowrap, $justify: normal, $align: normal) {
+    display: $display;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin grid($display: grid, $column: none, $row: none) {
+    display: $display;
+    grid-template-columns: $column;
+    grid-template-rows: $row;
+}
+
+body {
+    @extend %content-wraper;
+    @extend %reset-margin-padding;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+ul {
+    @extend %reset-margin-padding;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h3, p {
+    @extend %reset-margin-padding;
+}
+
+//Images every where shoul be
+img {
+    height: 100%;
+    width: 100%;
+}
