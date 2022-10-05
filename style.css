@@ -63,6 +63,7 @@ nav ul {
 nav a {
   font-weight: 600;
 }
+
 /**Hero layout using grid**/
 .hero {
   display: grid;
@@ -95,7 +96,6 @@ nav a {
 /*** Hero children ***/
 .hero-img {
   position: relative;
-  min-height: 100vh;
 }
 .hero-img .logo {
   width: 10em;
@@ -300,14 +300,9 @@ main h2 {
 /* Footer section */
 /** gallery **/
 .gallery {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: normal;
-  align-items: normal;
-}
-.gallery * {
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: none;
 }
 
 footer nav {
@@ -325,6 +320,88 @@ footer nav a {
 }
 footer nav .social-media {
   margin-top: 50px;
+}
+
+@media (max-width: 850px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "fullimg" "learnmore-one-pic" "learnmore-one" "learnmore-two-pic" "learnmore-two" "learnmore-one-pic-wcap" "learnmore-two-pic-wcap";
+  }
+  .hero nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+  }
+  .hero nav ul {
+    display: none;
+  }
+  /** Hero children **/
+  .hero-img {
+    min-height: auto;
+  }
+  .hero-img .caption {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    gap: 30px;
+  }
+  .hero-img .caption h1 {
+    font-size: 2.5em;
+  }
+  .hero-learnmore.one.text, .hero-learnmore.two.text {
+    padding: 50px 0;
+  }
+  .hero-learnmore.one.text .hero-learnmore-wraper, .hero-learnmore.two.text .hero-learnmore-wraper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: center;
+    width: 80%;
+  }
+  .hero-learnmore.one.text .hero-learnmore-wraper h3, .hero-learnmore.two.text .hero-learnmore-wraper h3 {
+    font-size: 2.3em;
+  }
+  .hero-learnmore.one.text .hero-learnmore-wraper h3, .hero-learnmore.one.text .hero-learnmore-wraper p, .hero-learnmore.two.text .hero-learnmore-wraper h3, .hero-learnmore.two.text .hero-learnmore-wraper p {
+    text-align: center;
+  }
+  .hero-learnmore.one.text .hero-learnmore-wraper button, .hero-learnmore.two.text .hero-learnmore-wraper button {
+    align-self: center;
+  }
+  .hero-learnmore-one.pic .caption, .hero-learnmore-two.pic .caption {
+    width: 80%;
+  }
+  .hero-learnmore-one.pic .caption h3, .hero-learnmore-one.pic .caption p, .hero-learnmore-two.pic .caption h3, .hero-learnmore-two.pic .caption p {
+    text-align: center;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: center;
+  }
+  main h2 {
+    text-align: center;
+    font-size: 1.1em;
+  }
+  .client-wraper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+  }
+  /** gallery **/
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
