@@ -51,7 +51,6 @@ nav {
 /*** Hero children ***/
 .hero-img {
      position: relative;
-     //min-height: 100vh;
 
      .logo {
          width: 10em;
@@ -64,12 +63,12 @@ nav {
          transform: translate(-50%, -35%);
 
          @include flex($direction: column, $align: center);
-         gap: 70px;
+         gap: 30px;
 
          h1 {
              text-align: center;
              color: $color-neu-white;
-             font-size: 3.5em;
+             font-size: 3em;
              font-weight: $font-weight-fraunces-2;
              word-spacing: 10px;
          }
@@ -105,8 +104,35 @@ nav {
              background-color: $color-neu-white;
              font-family: $font-family-fraunces, $font-family-fallback;
              font-weight: $font-weight-fraunces-2;
+            transition: 0.15s ease-out; 
+         }
+
+         #contact:hover {
+            transition: 0.15s ease-in;
+            color: $color-neu-white;
+            background-color: rgba($color-neu-white, 0.3);
          }
      }
+}
+
+//The hamburger button in the nav
+#mb-button {
+    position: absolute;
+    height: 25px;
+    width: 35px;
+    top: 13%;
+    right: 4%;
+
+    display: none;
+    #mb-button-bar {
+        background-color: $color-neu-white;
+        width: 100%;
+        height: 3px;
+    }
+}
+
+.triangle {
+    display: none;
 }
 
 .hero-learnmore {
@@ -142,14 +168,25 @@ nav {
     
     &.one{
         button::before{
-            background-color: lighten($color-pri-yellow, 35%);
+            background-color: lighten($color-pri-yellow, 25%);
+            transition: 0.1s;
+        }
+        button:hover::before{
+            background-color: $color-pri-yellow;
+            transition: 0.1s;
         }
     }
     
     &.two{
         button::before{
             background-color: lighten($color-pri-soft-red, 20%);
+            transition: 0.1s;
         }
+        button:hover::before{
+            transition: 0.1s;
+            background-color: $color-pri-soft-red;
+        }
+ 
     }
     
     button {
@@ -160,6 +197,7 @@ nav {
         border: none;
         background-color: transparent;
         align-self: flex-start;
+        cursor: pointer;
     }
 }
 
@@ -186,6 +224,7 @@ nav {
         p { 
             text-align: center;
             font-weight: $font-weight-barlow;
+            font-size: $font-size;
             line-height: 1.5;
         }
     }
@@ -278,10 +317,14 @@ footer {
         a {
             color: $color-pri-dark-moderate-cyan;
         }
+
+        a:hover {
+            color: $color-neu-white;
+        }
         
         .social-media {
             margin-top: 50px;
-        }
 
+        }
     }
 }

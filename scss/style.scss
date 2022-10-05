@@ -1,6 +1,30 @@
 @import '_base';
 @import '_desktop';
 
+//Mobile
+@media (max-width: 1100px) {
+    //header
+    .hero-img {
+        .caption {
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+        }
+    }
+
+    .hero-learnmore.one.text, .hero-learnmore.two.text {
+        padding: 50px 0;
+    }
+
+    //footer
+    .client {
+        img {
+            width: 20%;
+            height: auto;
+            border-radius: 200px;
+        }
+    }
+}
 
 @media (max-width: 850px){
 
@@ -17,10 +41,59 @@
         ;
  
         nav {
-            @include flex();
+            //The hamburger
+            @media (max-width: 750px) {
+                .triangle {
+                    display: block;
+                    width: 0;
+                    height: 0;
 
-            ul {
-                display: none;
+                    position: absolute;
+                    top: -15%;
+                    right: 0;
+                    border-right: 0 solid transparent;
+                    border-left: 35px solid transparent;
+                    border-bottom: 50px solid $color-neu-white;
+                }
+
+                ul {
+                    @include flex($direction:column, $align: center);
+                    gap: 40px;
+
+                    width: calc(100% - 8vw);
+                    position: absolute;
+                    top: 100px;
+
+                    padding: 50px 30px;
+                    background-color: $color-neu-white;
+
+                    a {
+                        color: $color-neu-dark-grayish-blue;
+                    }
+
+                    #contact {
+                        transition: none;
+                        background-color: $color-pri-yellow;
+                    }
+
+                    #contact:hover{
+                        transition: none;
+                        background-color: $color-pri-yellow;
+                    }
+
+                    transition: 0.2s ease-in;
+                    transform-origin: top right;
+                    transform: scale(0);
+                }
+
+                ul.active {
+                    transition: 0.2s ease-in-out;
+                    transform: scale(1, 1);
+                }
+
+                #mb-button {
+                    @include flex($direction: column, $justify: space-between);
+                }
             }
         }
     }
@@ -30,19 +103,21 @@
         min-height: auto;
         
         .caption {
-             top: 45%;
+             top: 50%;
              left: 50%;
-             transform: translate(-50%, -45%);
+             transform: translate(-50%, -50%);
              gap: 30px;
 
             h1{
-                font-size: 2.5em;
+                font-size: 3.7em;
+                @media (max-width: 500px) {
+                    font-size: 10vw;
+                }
             }
         }
     }
 
     .hero-learnmore.one.text, .hero-learnmore.two.text {
-        padding: 50px 0;
 
         .hero-learnmore-wraper {
             @include flex($direction: column, $align: center);
@@ -63,11 +138,28 @@
     }
 
     .hero-learnmore-one.pic, .hero-learnmore-two.pic{
+
+        .caption {  
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%,-65%);
+        }
+
+        @media (max-width: 600px) {
+         .caption{
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%,-80%);
+         }
+        }
+
+
         .caption {
             width: 80%;
             h3, p {
                 text-align: center;
             }
+
         }
     }
 
@@ -89,9 +181,5 @@
     /** gallery **/
     .gallery {
         @include grid($column: 1fr 1fr, $row: repeat(2, 1fr));
-    }
-
-    footer {
-
     }
 }

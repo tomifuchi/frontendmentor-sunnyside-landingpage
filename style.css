@@ -110,12 +110,12 @@ nav a {
   flex-wrap: nowrap;
   justify-content: normal;
   align-items: center;
-  gap: 70px;
+  gap: 30px;
 }
 .hero-img .caption h1 {
   text-align: center;
   color: hsl(0deg, 0%, 100%);
-  font-size: 3.5em;
+  font-size: 3em;
   font-weight: 900;
   word-spacing: 10px;
 }
@@ -146,6 +146,30 @@ nav a {
   background-color: hsl(0deg, 0%, 100%);
   font-family: "Fraunces", Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
+  transition: 0.15s ease-out;
+}
+.hero-img nav #contact:hover {
+  transition: 0.15s ease-in;
+  color: hsl(0deg, 0%, 100%);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#mb-button {
+  position: absolute;
+  height: 25px;
+  width: 35px;
+  top: 13%;
+  right: 4%;
+  display: none;
+}
+#mb-button #mb-button-bar {
+  background-color: hsl(0deg, 0%, 100%);
+  width: 100%;
+  height: 3px;
+}
+
+.triangle {
+  display: none;
 }
 
 .hero-learnmore {
@@ -184,10 +208,20 @@ nav a {
   z-index: -1;
 }
 .hero-learnmore.one button::before {
-  background-color: #fff3ad;
+  background-color: #ffeb7a;
+  transition: 0.1s;
+}
+.hero-learnmore.one button:hover::before {
+  background-color: hsl(51deg, 100%, 49%);
+  transition: 0.1s;
 }
 .hero-learnmore.two button::before {
   background-color: #ffd2cc;
+  transition: 0.1s;
+}
+.hero-learnmore.two button:hover::before {
+  transition: 0.1s;
+  background-color: hsl(7deg, 99%, 70%);
 }
 .hero-learnmore button {
   position: relative;
@@ -197,6 +231,7 @@ nav a {
   border: none;
   background-color: transparent;
   align-self: flex-start;
+  cursor: pointer;
 }
 
 .hero-learnmore-one.pic, .hero-learnmore-two.pic {
@@ -224,6 +259,7 @@ nav a {
 .hero-learnmore-one.pic .caption p, .hero-learnmore-two.pic .caption p {
   text-align: center;
   font-weight: 600;
+  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -318,10 +354,28 @@ footer nav {
 footer nav a {
   color: hsl(168deg, 34%, 41%);
 }
+footer nav a:hover {
+  color: hsl(0deg, 0%, 100%);
+}
 footer nav .social-media {
   margin-top: 50px;
 }
 
+@media (max-width: 1100px) {
+  .hero-img .caption {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hero-learnmore.one.text, .hero-learnmore.two.text {
+    padding: 50px 0;
+  }
+  .client img {
+    width: 20%;
+    height: auto;
+    border-radius: 200px;
+  }
+}
 @media (max-width: 850px) {
   .hero {
     display: grid;
@@ -329,32 +383,80 @@ footer nav .social-media {
     grid-template-rows: auto;
     grid-template-areas: "fullimg" "learnmore-one-pic" "learnmore-one" "learnmore-two-pic" "learnmore-two" "learnmore-one-pic-wcap" "learnmore-two-pic-wcap";
   }
-  .hero nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: normal;
-    align-items: normal;
+  /** Hero children **/
+  /** gallery **/
+}
+@media (max-width: 850px) and (max-width: 750px) {
+  .hero nav .triangle {
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -15%;
+    right: 0;
+    border-right: 0 solid transparent;
+    border-left: 35px solid transparent;
+    border-bottom: 50px solid hsl(0deg, 0%, 100%);
   }
   .hero nav ul {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: center;
+    gap: 40px;
+    width: calc(100% - 8vw);
+    position: absolute;
+    top: 100px;
+    padding: 50px 30px;
+    background-color: hsl(0deg, 0%, 100%);
+    transition: 0.2s ease-in;
+    transform-origin: top right;
+    transform: scale(0);
   }
-  /** Hero children **/
+  .hero nav ul a {
+    color: hsl(232deg, 10%, 55%);
+  }
+  .hero nav ul #contact {
+    transition: none;
+    background-color: hsl(51deg, 100%, 49%);
+  }
+  .hero nav ul #contact:hover {
+    transition: none;
+    background-color: hsl(51deg, 100%, 49%);
+  }
+  .hero nav ul.active {
+    transition: 0.2s ease-in-out;
+    transform: scale(1, 1);
+  }
+  .hero nav #mb-button {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: normal;
+  }
+}
+@media (max-width: 850px) {
   .hero-img {
     min-height: auto;
   }
   .hero-img .caption {
-    top: 45%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -50%);
     gap: 30px;
   }
   .hero-img .caption h1 {
-    font-size: 2.5em;
+    font-size: 3.7em;
   }
-  .hero-learnmore.one.text, .hero-learnmore.two.text {
-    padding: 50px 0;
+}
+@media (max-width: 850px) and (max-width: 500px) {
+  .hero-img .caption h1 {
+    font-size: 10vw;
   }
+}
+@media (max-width: 850px) {
   .hero-learnmore.one.text .hero-learnmore-wraper, .hero-learnmore.two.text .hero-learnmore-wraper {
     display: flex;
     flex-direction: column;
@@ -372,12 +474,30 @@ footer nav .social-media {
   .hero-learnmore.one.text .hero-learnmore-wraper button, .hero-learnmore.two.text .hero-learnmore-wraper button {
     align-self: center;
   }
+}
+@media (max-width: 850px) {
+  .hero-learnmore-one.pic .caption, .hero-learnmore-two.pic .caption {
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+  }
+}
+@media (max-width: 850px) and (max-width: 600px) {
+  .hero-learnmore-one.pic .caption, .hero-learnmore-two.pic .caption {
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+  }
+}
+@media (max-width: 850px) {
   .hero-learnmore-one.pic .caption, .hero-learnmore-two.pic .caption {
     width: 80%;
   }
   .hero-learnmore-one.pic .caption h3, .hero-learnmore-one.pic .caption p, .hero-learnmore-two.pic .caption h3, .hero-learnmore-two.pic .caption p {
     text-align: center;
   }
+}
+@media (max-width: 850px) {
   main {
     display: flex;
     flex-direction: column;
@@ -389,6 +509,8 @@ footer nav .social-media {
     text-align: center;
     font-size: 1.1em;
   }
+}
+@media (max-width: 850px) {
   .client-wraper {
     display: flex;
     flex-direction: column;
@@ -396,7 +518,8 @@ footer nav .social-media {
     justify-content: normal;
     align-items: normal;
   }
-  /** gallery **/
+}
+@media (max-width: 850px) {
   .gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;

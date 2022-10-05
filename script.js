@@ -7,3 +7,10 @@ function scrollMain() {
     inline: 'start'
   });
 }
+
+//Mb button
+const hambtn = document.getElementById('mb-button');
+hambtn.addEventListener('click', () => {
+  const ul = document.querySelector('nav ul');
+  ul.classList.toggle('active');
+});
