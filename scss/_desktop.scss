@@ -14,7 +14,7 @@ header {
   }
 }
 
-/** Naviation in hero of header**/
+/** Navigation in hero of header**/
 nav {
     padding: 0 3vw;
     ul {
@@ -43,8 +43,8 @@ nav {
     .hero-learnmore.two { grid-area: learnmore-two; }
     .hero-learnmore.two.pic { grid-area: learnmore-two-pic; }
     //The bottom with caption inside them
-    .hero-learnmore-one.pic { grid-area: learnmore-one-pic-wcap; }
-    .hero-learnmore-two.pic { grid-area: learnmore-two-pic-wcap; }
+    .hero-learnmore-wcaption-one.pic { grid-area: learnmore-one-pic-wcap; }
+    .hero-learnmore-wcaption-two.pic { grid-area: learnmore-two-pic-wcap; }
 }
 
 
@@ -70,7 +70,7 @@ nav {
              color: $color-neu-white;
              font-size: 3em;
              font-weight: $font-weight-fraunces-2;
-             word-spacing: 10px;
+             letter-spacing: 10px;
          }
          
          div {
@@ -92,7 +92,6 @@ nav {
          right: 0;
 
          a {
-             font-family: $font-family-barlow, $font-family-fallback;
              font-size: $font-size;
              color: $color-neu-white;
          }
@@ -116,6 +115,7 @@ nav {
 }
 
 //The hamburger button in the nav
+/*** Nav mobile button ***/
 #mb-button {
     position: absolute;
     height: 25px;
@@ -131,10 +131,12 @@ nav {
     }
 }
 
+//triangle sticks to the top of the hovering menu
 .triangle {
     display: none;
 }
 
+/*** Learn more portion ***/
 .hero-learnmore {
     @include flex($justify: center, $align: center);
 
@@ -201,7 +203,9 @@ nav {
     }
 }
 
-.hero-learnmore-one.pic, .hero-learnmore-two.pic{
+
+//Learn more with caption inside
+.hero-learnmore-wcaption-one, .hero-learnmore-wcaption-two{
     position: relative;
     
     //position of the caption
@@ -230,7 +234,7 @@ nav {
     }
 }
 
-.hero-learnmore-one.pic {
+.hero-learnmore-wcaption-one {
     h3 {
         color: $color-pri-dark-cyan;
     }
@@ -239,7 +243,7 @@ nav {
     }
 }
 
-.hero-learnmore-two.pic {
+.hero-learnmore-wcaption-two {
     h3 {
         color: $color-pri-dark-blue;
     }
@@ -298,7 +302,6 @@ main {
 }
 
 /* Footer section */
-
 /** gallery **/
 .gallery {
     @include grid($column: repeat(4, 1fr));
@@ -308,10 +311,14 @@ footer {
     nav {
         @include flex($direction: column, $justify: center, $align: center);
         gap: 40px;
-        background-color: lighten($color-pri-dark-moderate-cyan, 19%);
+        background-color: lighten($color-pri-dark-moderate-cyan, 20%);
         padding: 70px 0;
-        
-        .logo{
+
+        .logo {
+            font-family: $font-family-fraunces, $font-family-fallback;
+            font-size: 2em;
+            font-weight: $font-weight-fraunces-2;
+            color: darken($color-pri-dark-moderate-cyan, 10%);
         }
 
         a {
@@ -324,7 +331,6 @@ footer {
         
         .social-media {
             margin-top: 50px;
-
         }
     }
 }

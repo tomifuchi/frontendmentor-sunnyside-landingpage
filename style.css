@@ -48,7 +48,7 @@ header nav {
   align-items: normal;
 }
 
-/** Naviation in hero of header**/
+/** Navigation in hero of header**/
 nav {
   padding: 0 3vw;
 }
@@ -86,10 +86,10 @@ nav a {
 .hero .hero-learnmore.two.pic {
   grid-area: learnmore-two-pic;
 }
-.hero .hero-learnmore-one.pic {
+.hero .hero-learnmore-wcaption-one.pic {
   grid-area: learnmore-one-pic-wcap;
 }
-.hero .hero-learnmore-two.pic {
+.hero .hero-learnmore-wcaption-two.pic {
   grid-area: learnmore-two-pic-wcap;
 }
 
@@ -117,7 +117,7 @@ nav a {
   color: hsl(0deg, 0%, 100%);
   font-size: 3em;
   font-weight: 900;
-  word-spacing: 10px;
+  letter-spacing: 10px;
 }
 .hero-img .caption div {
   cursor: pointer;
@@ -135,7 +135,6 @@ nav a {
   right: 0;
 }
 .hero-img nav a {
-  font-family: "Barlow", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 18px;
   color: hsl(0deg, 0%, 100%);
 }
@@ -154,6 +153,7 @@ nav a {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+/*** Nav mobile button ***/
 #mb-button {
   position: absolute;
   height: 25px;
@@ -172,6 +172,7 @@ nav a {
   display: none;
 }
 
+/*** Learn more portion ***/
 .hero-learnmore {
   display: flex;
   flex-direction: row;
@@ -234,16 +235,16 @@ nav a {
   cursor: pointer;
 }
 
-.hero-learnmore-one.pic, .hero-learnmore-two.pic {
+.hero-learnmore-wcaption-one, .hero-learnmore-wcaption-two {
   position: relative;
 }
-.hero-learnmore-one.pic .caption, .hero-learnmore-two.pic .caption {
+.hero-learnmore-wcaption-one .caption, .hero-learnmore-wcaption-two .caption {
   position: absolute;
   top: 80%;
   left: 50%;
   transform: translate(-50%, -80%);
 }
-.hero-learnmore-one.pic .caption, .hero-learnmore-two.pic .caption {
+.hero-learnmore-wcaption-one .caption, .hero-learnmore-wcaption-two .caption {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -251,29 +252,29 @@ nav a {
   align-items: center;
   gap: 30px;
 }
-.hero-learnmore-one.pic .caption h3, .hero-learnmore-two.pic .caption h3 {
+.hero-learnmore-wcaption-one .caption h3, .hero-learnmore-wcaption-two .caption h3 {
   font-weight: 900;
   text-align: center;
   font-size: 2em;
 }
-.hero-learnmore-one.pic .caption p, .hero-learnmore-two.pic .caption p {
+.hero-learnmore-wcaption-one .caption p, .hero-learnmore-wcaption-two .caption p {
   text-align: center;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.5;
 }
 
-.hero-learnmore-one.pic h3 {
+.hero-learnmore-wcaption-one h3 {
   color: hsl(167deg, 40%, 24%);
 }
-.hero-learnmore-one.pic p {
+.hero-learnmore-wcaption-one p {
   color: #346a5f;
 }
 
-.hero-learnmore-two.pic h3 {
+.hero-learnmore-wcaption-two h3 {
   color: hsl(198deg, 62%, 26%);
 }
-.hero-learnmore-two.pic p {
+.hero-learnmore-wcaption-two p {
   color: #144357;
 }
 
@@ -348,8 +349,14 @@ footer nav {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  background-color: #76bcae;
+  background-color: #7abdb0;
   padding: 70px 0;
+}
+footer nav .logo {
+  font-family: "Fraunces", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  color: #346a5f;
 }
 footer nav a {
   color: hsl(168deg, 34%, 41%);
@@ -383,7 +390,8 @@ footer nav .social-media {
     grid-template-rows: auto;
     grid-template-areas: "fullimg" "learnmore-one-pic" "learnmore-one" "learnmore-two-pic" "learnmore-two" "learnmore-one-pic-wcap" "learnmore-two-pic-wcap";
   }
-  /** Hero children **/
+  /*** Hero children ***/
+  /** client **/
   /** gallery **/
 }
 @media (max-width: 850px) and (max-width: 750px) {
@@ -427,7 +435,7 @@ footer nav .social-media {
   }
   .hero nav ul.active {
     transition: 0.2s ease-in-out;
-    transform: scale(1, 1);
+    transform: scale(1);
   }
   .hero nav #mb-button {
     display: flex;
@@ -438,9 +446,6 @@ footer nav .social-media {
   }
 }
 @media (max-width: 850px) {
-  .hero-img {
-    min-height: auto;
-  }
   .hero-img .caption {
     top: 50%;
     left: 50%;
@@ -476,24 +481,24 @@ footer nav .social-media {
   }
 }
 @media (max-width: 850px) {
-  .hero-learnmore-one.pic .caption, .hero-learnmore-two.pic .caption {
+  .hero-learnmore-wcaption-one .caption, .hero-learnmore-wcaption-two .caption {
     top: 65%;
     left: 50%;
     transform: translate(-50%, -65%);
   }
 }
 @media (max-width: 850px) and (max-width: 600px) {
-  .hero-learnmore-one.pic .caption, .hero-learnmore-two.pic .caption {
+  .hero-learnmore-wcaption-one .caption, .hero-learnmore-wcaption-two .caption {
     top: 80%;
     left: 50%;
     transform: translate(-50%, -80%);
   }
 }
 @media (max-width: 850px) {
-  .hero-learnmore-one.pic .caption, .hero-learnmore-two.pic .caption {
+  .hero-learnmore-wcaption-one .caption, .hero-learnmore-wcaption-two .caption {
     width: 80%;
   }
-  .hero-learnmore-one.pic .caption h3, .hero-learnmore-one.pic .caption p, .hero-learnmore-two.pic .caption h3, .hero-learnmore-two.pic .caption p {
+  .hero-learnmore-wcaption-one .caption h3, .hero-learnmore-wcaption-one .caption p, .hero-learnmore-wcaption-two .caption h3, .hero-learnmore-wcaption-two .caption p {
     text-align: center;
   }
 }
