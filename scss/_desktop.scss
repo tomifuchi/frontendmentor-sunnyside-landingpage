@@ -61,6 +61,7 @@ nav {
          top: 35%;
          left: 50%;
          transform: translate(-50%, -35%);
+         width: max-content;
 
          @include flex($direction: column, $align: center);
          gap: 30px;
@@ -70,7 +71,7 @@ nav {
              color: $color-neu-white;
              font-size: 3em;
              font-weight: $font-weight-fraunces-2;
-             letter-spacing: 10px;
+             letter-spacing: 20px;
          }
          
          div {

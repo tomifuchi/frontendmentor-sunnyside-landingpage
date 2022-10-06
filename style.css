@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow:600");
+@import url("https://fonts.googleapis.com/css?family=Fraunces:700,900");
 * {
   box-sizing: border-box;
 }
@@ -105,6 +107,7 @@ nav a {
   top: 35%;
   left: 50%;
   transform: translate(-50%, -35%);
+  width: max-content;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -117,7 +120,7 @@ nav a {
   color: hsl(0deg, 0%, 100%);
   font-size: 3em;
   font-weight: 900;
-  letter-spacing: 10px;
+  letter-spacing: 20px;
 }
 .hero-img .caption div {
   cursor: pointer;
@@ -373,6 +376,10 @@ footer nav .social-media {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: auto;
+  }
+  .hero-img .caption h1 {
+    letter-spacing: 10px;
   }
   .hero-learnmore.one.text, .hero-learnmore.two.text {
     padding: 50px 0;
